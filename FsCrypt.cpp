@@ -272,8 +272,8 @@ static bool init_data_file_encryption_options() {
                       "this flag from the device's fstab";
         return false;
     }
-    if (options->version == 1) {
-        options->use_hw_wrapped_key =
+    if (s_data_options.version == 1) {
+        s_data_options.use_hw_wrapped_key =
             GetEntryForMountPoint(&fstab_default, DATA_MNT_POINT)->fs_mgr_flags.wrapped_key;
     }
     return true;
